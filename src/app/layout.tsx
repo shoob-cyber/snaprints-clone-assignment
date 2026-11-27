@@ -19,6 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://snaprints-clone-assignment.vercel.app"),
   title: "Snaprint — Self-Service Smart Print Kiosks | Franchise & Ownership",
   description:
     "Turn a small corner into a self-service print business. Calculate your payback period and request a callback today.",
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
+    url: "https://snaprints-clone-assignment.vercel.app",
     siteName: "Snaprint",
     title: "Snaprint — Self-Service Print Kiosks for Space Owners",
     description:

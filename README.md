@@ -1,5 +1,7 @@
 # Snaprint — Self-Service Print Kiosk Concept Homepage
 
+> 🌐 **Live Demo**: [https://snaprints-clone-assignment.vercel.app](https://snaprints-clone-assignment.vercel.app/)
+
 This is a concept homepage and franchise platform built for **Snaprint**, a Bengaluru company that sells self-service print kiosks to space owners (campuses, commercial spaces, apartments, and standalone retail). It includes the main conversion homepage and four dedicated buyer-path landing pages (`/franchise/campus`, `/franchise/commercial`, `/franchise/apartments`, and `/franchise/standalone`).
 
 Built as a portfolio piece by a fresher front-end designer applying for a developer internship at Snaprint.
