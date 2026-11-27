@@ -41,13 +41,28 @@ Open [http://localhost:3000](http://localhost:3000) to view the project in your 
 
 ---
 
-## What I Changed vs. the Current Site
+## What I Changed vs. the Current Site (My POV)
 
-- **Surfaced the four buyer paths on the homepage and rebuilt them as simpler pages (Snaprint's site already has franchise sub-pages).**
-- **Positioned the Payback Calculator Near the Top**: Gives potential franchise buyers immediate visibility into monthly returns and payback timelines.
-- **Strengthened Trust Details**: Highlighted the 1-year warranty, zero royalties, no mandatory AMC, lifetime software updates, and 48-hour hardware support on the homepage.
-- **High-Definition Vector Logo**: Recreated the Snaprint mascot and wordmark as an inline SVG so it scales crisply on all screen resolutions and dark mode.
-- **Cleaned Up Visual Contrast**: Ensured all text passes WCAG AA accessibility contrast guidelines.
+### Structural Comparison
+
+| Area / Section | Snaprint's Current Approach | My Redesign (Seikh's POV) | Why I Structured It This Way |
+| :--- | :--- | :--- | :--- |
+| **Payback Calculator** | Placed deeper in secondary pages or separate tabs. | Positioned near the top as a live, interactive tool. | A franchise buyer's very first question is *"When do I break even?"* Giving them immediate slider control builds confidence before they scroll. |
+| **Buyer Pathways** | Generic descriptions scattered across subpages. | 4 explicit paths (Campus, Commercial, Apartments, Standalone) right on the homepage, with dedicated deep-dive subpages. | A college dean, a society secretary, and a retail shop owner have completely different problems. Segmenting them early answers *"Does this actually work for my space?"* |
+| **Hardware Trust & Terms** | Warranties and support terms hidden in text blocks. | 6 clear trust pillars upfront (zero royalties, no mandatory AMC, 1-yr extendable warranty, 48-hr support, owner dashboard). | Franchise buyers are understandably wary of predatory maintenance contracts. Being upfront about no mandatory AMC removes major buyer hesitation. |
+| **Print Journey Walkthrough** | Described in static text. | Interactive 4-step walkthrough with a real-time mobile preview state. | Space owners need visual proof that their staff won't have to babysit the machine. Showing *Scan QR → Upload → UPI → Collect* proves it's truly self-service. |
+| **Logo & Brand Assets** | Bitmap image asset. | Rebuilt as an inline, lightweight SVG component with dark/light mode variants. | Ensures razor-sharp rendering on Retina and 4K displays with zero layout shift (CLS). |
+| **Data Integrity & Tone** | Marketing-heavy copy. | Strictly grounded in confirmed facts; unverified specs marked *"To be confirmed with Snaprint"*. | An honest, transparent pitch wins serious institution buyers much faster than fabricated footfall numbers. |
+
+### My Design POV: Why This Structure Works
+
+> *"When looking at Snaprint's real-world business in Bengaluru, a buyer isn't an impulse customer — they're evaluating a physical capital asset. My goal was to strip out marketing fluff and structure the homepage around the four questions every venue owner actually asks:*
+> 1. ***Does it fit in my lobby?*** *(Yes, ~55 × 70 cm compact footprint).*
+> 2. ***Will my staff have to babysit it?*** *(No, customers scan QR, upload via browser with no app, and pay UPI).*
+> 3. ***What are the real ongoing catches?*** *(No mandatory AMC, zero royalties, owner keeps print revenue).*
+> 4. ***When do I get my money back?*** *(Answered live by the payback calculator near the top).*
+> 
+> *By aligning the visual hierarchy directly with how buyers think, the page naturally drives serious venue operators toward clicking 'Request a callback'."*
 
 ---
 
