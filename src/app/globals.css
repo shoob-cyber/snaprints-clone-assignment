@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-canvas: #F8F7F4;
+  --color-charcoal: #0e0e0d;
+  --color-charcoal-muted: #555550;
+  --color-charcoal-light: #888882;
+  --color-charcoal-border: #E2E0D8;
+  --color-brand-red: #E63946;
+  --color-brand-red-deep: #C1121F;
+  --color-brand-red-dark: #C1121F; /* High-contrast red for small text on light bg (5.81:1 WCAG AA) */
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F1EFEA;
+  --font-heading: var(--font-nunito), "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+:root {
+  --background: #F8F7F4;
+  --foreground: #0e0e0d;
+  --card-bg: #FFFFFF;
+  --card-border: #E2E0D8;
+  --subtle-bg: #F1EFEA;
+  --muted-text: #555550;
+}
+
+.dark {
+  --background: #0e0e0d;
+  --foreground: #F8F7F4;
+  --card-bg: #181816;
+  --card-border: #2c2c28;
+  --subtle-bg: #222220;
+  --muted-text: #A1A19A;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Heading & Body font helper classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Subtle dot-pattern background utility (adapts to light and dark modes) */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(14, 14, 13, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .bg-dot-pattern {
+  background-image: radial-gradient(rgba(248, 247, 244, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Word-by-word slide in up animation */
+@keyframes slideUpWord {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up-word {
+  animation: slideUpWord 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Gentle floating animation for hero decorative cards */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes softFloatDelayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.animate-soft-float {
+  animation: softFloat 5s ease-in-out infinite;
+}
+
+.animate-soft-float-delayed {
+  animation: softFloatDelayed 6s ease-in-out 1.5s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* Custom smooth slider range styling */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #C1121F;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(193, 18, 31, 0.4);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(193, 18, 31, 0.55);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #C1121F;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(193, 18, 31, 0.4);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(193, 18, 31, 0.55);
+}
+
+/* Respect user's motion preferences: disable all animations & transitions site-wide */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+  .animate-slide-up-word {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
